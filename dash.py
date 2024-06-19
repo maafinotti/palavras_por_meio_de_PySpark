@@ -6,6 +6,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from PIL import Image
 
+
 def main():
 
     @st.cache_data
@@ -21,8 +22,8 @@ def main():
 
 
     with st.sidebar:
-        st.title("Análise de Lucro")
-        uploaded_file = st. file_uploader("Coloque o seu arquivo aqui")
+        st.title("Dashboard - Espumante")
+        uploaded_file = st. file_uploader("Coloque o seu arquivo 'sites.xlsx' aqui")
     if uploaded_file is not None:
         dfs = load_data(uploaded_file)
 
@@ -74,14 +75,14 @@ def main():
             st.write(f"Palavras do site: **{site_selecionado}**")
             st.dataframe(data)
 
-        # with col2:
-        #     # Gráfico interativo com Plotly Express
-        #     st.write("Gráfico de Frequência das Palavras:")
-        #     fig = px.bar(data, x='palavra', y='qtde', title=f'Frequência de Palavras no site {site_selecionado}', 
-        #                 labels={'palavra': 'Palavra', 'qtde': 'Quantidade'},
-        #                 template='plotly_white')
-        #     fig.update_layout(xaxis_tickangle=-45)
+        with col2:
+            # Gráfico interativo com Plotly Express
+            st.write("Gráfico de Frequência das Palavras:")
+            fig = px.bar(data, x='palavra', y='qtde', title=f'Frequência de Palavras no site {site_selecionado}', 
+                        labels={'palavra': 'Palavra', 'qtde': 'Quantidade'},
+                        template='plotly_white')
+            fig.update_layout(xaxis_tickangle=-45)
 
-        #     st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True)
 if __name__  == '__main__':
     main()
