@@ -26,7 +26,7 @@ Como forma de organização, foi criado um Trello, para organizar todas as ativi
 
 Dessa forma, o trabalho tem como objetivo calcular a quantidade de palavras e termos relacionadas ao público alvo, dentro de cada site. Também fizemos um dashboard para mostrar visualmente nossas análises, além da análise de sentimentos.
 
-Clique [aqui](https://github.com/maafinotti/palavras_por_meio_de_PySpark/blob/main/Manual%20de%20Orienta%C3%A7%C3%A3o%20para%20Execu%C3%A7%C3%A3o%20do%20Notebook.docx) para acessar o manual de execução do notebook python.
+Clique [aqui](https://github.com/maafinotti/palavras_por_meio_de_PySpark/blob/main/Manual%20de%20Orienta%C3%A7%C3%A3o%20para%20Execu%C3%A7%C3%A3o%20do%20Notebook.pdf) para acessar o manual de execução do notebook python.
 
 ### :bookmark_tabs: Etapas
 - [x] Definir tema
