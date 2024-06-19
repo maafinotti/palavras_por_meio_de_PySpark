@@ -20,11 +20,12 @@ def main():
         wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
         return wordcloud
 
-
     with st.sidebar:
         st.title("Dashboard - Espumante")
         uploaded_file = st. file_uploader("Coloque o seu arquivo 'sites.xlsx' aqui")
-    if uploaded_file is not None:
+    if uploaded_file is None:
+        st.title(f"Adicione o arquivo Excel 'sites.xlsx' na sidebar")
+    else:
         dfs = load_data(uploaded_file)
 
         col1, col2 = st.columns([1, 2])
