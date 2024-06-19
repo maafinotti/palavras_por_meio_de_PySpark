@@ -5,21 +5,23 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from PIL import Image
 
+@st.cache_data
+def load_data(file):
+    xls = pd.ExcelFile(file)
+    dfs = {sheet_name: xls.parse(sheet_name) for sheet_name in xls.sheet_names}
+    return dfs
 
-def main():
-    @st.cache_data
-    def load_data(file):
-        xls = pd.ExcelFile(file)
-        dfs = {sheet_name: xls.parse(sheet_name) for sheet_name in xls.sheet_names}
-        return dfs
+def gerar_nuvem_de_palavras(data):
+    text = ' '.join([f"{row['palavra']} " * int(row['qtde']) for _, row in data.iterrows()])
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+    return wordcloud
 
-    def gerar_nuvem_de_palavras(data):
-        text = ' '.join([f"{row['palavra']} " * int(row['qtde']) for _, row in data.iterrows()])
-        wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-        return wordcloud
 
-    # Carregar os dados
-    dfs = load_data('sites.xlsx')
+with st.sidebar:
+    st.title("Análise de Lucro")
+    uploaded_file = st. file_uploader("Coloque o seu arquivo aqui")
+if uploaded_file is not None:
+    dfs = load_data(uploaded_file)
 
     col1, col2 = st.columns([1, 2])
     with col1:
@@ -78,6 +80,3 @@ def main():
         fig.update_layout(xaxis_tickangle=-45)
 
         st.plotly_chart(fig, use_container_width=True)
-
-if __name__  == '__main__':
-    main()
