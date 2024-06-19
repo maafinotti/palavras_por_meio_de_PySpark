@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/maafinotti/palavras_por_meio_de_PySpark/blob/main/espumante.png">
+  <img src="https://github.com/maafinotti/palavras_por_meio_de_PySpark/blob/main/espumante.png" width="50">
 </p>
 
 <h1 align="center">Palavras por Meio de PySpark - Espumante</h1>
