@@ -51,6 +51,8 @@ def main():
     # Dados do site selecionado
     data = dfs[site_selecionado]
 
+    st.write(f"Nuvem de Palavras do Site: **{site_selecionado}**")
+
     # # Nuvem de palavras do site
     word_freq = dict(zip(data['palavra'], data['qtde']))
 
@@ -61,7 +63,6 @@ def main():
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
-    plt.title(f'Word Cloud para {site_selecionado}')
     plt.show()
     st.pyplot(plt)
 
