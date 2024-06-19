@@ -11,7 +11,7 @@
   </br>
   
 ### :dancers: Grupo
-- Edgard Ramos
+- [Edgard Ramos](https://github.com/Edgefalk)
 - Felipe Piovan
 - Gabriel Galvão
 - Manoela Finotti
