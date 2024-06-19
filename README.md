@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fpt%2Fsearch%3Fq%3Dchampanhe&psig=AOvVaw1nsTb6kgnAtUUg1I0ZMru5&ust=1718890963580000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCICwxoDm54YDFQAAAAAdAAAAABAE" alt="Espumante" height="50px"></a>
+<a href="https://w7.pngwing.com/pngs/492/213/png-transparent-champagne-glass-rose-bottle-champagne-champagne-opened-champagne-bottle-splash-food-champagne-thumbnail.png" alt="Espumante" height="50px"></a>
 </p>
 
 <h1 align="center">Palavras por Meio de PySpark - Espumante</h1>
