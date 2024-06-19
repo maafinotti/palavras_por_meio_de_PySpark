@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+# import plotly.express as px
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -71,12 +71,12 @@ if uploaded_file is not None:
         st.write(f"Palavras do site: **{site_selecionado}**")
         st.dataframe(data)
 
-    with col2:
-        # Gráfico interativo com Plotly Express
-        st.write("Gráfico de Frequência das Palavras:")
-        fig = px.bar(data, x='palavra', y='qtde', title=f'Frequência de Palavras no site {site_selecionado}', 
-                    labels={'palavra': 'Palavra', 'qtde': 'Quantidade'},
-                    template='plotly_white')
-        fig.update_layout(xaxis_tickangle=-45)
+    # with col2:
+    #     # Gráfico interativo com Plotly Express
+    #     st.write("Gráfico de Frequência das Palavras:")
+    #     fig = px.bar(data, x='palavra', y='qtde', title=f'Frequência de Palavras no site {site_selecionado}', 
+    #                 labels={'palavra': 'Palavra', 'qtde': 'Quantidade'},
+    #                 template='plotly_white')
+    #     fig.update_layout(xaxis_tickangle=-45)
 
-        st.plotly_chart(fig, use_container_width=True)
+    #     st.plotly_chart(fig, use_container_width=True)
