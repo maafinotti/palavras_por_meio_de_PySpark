@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -14,11 +13,6 @@ def main():
         xls = pd.ExcelFile(file)
         dfs = {sheet_name: xls.parse(sheet_name) for sheet_name in xls.sheet_names}
         return dfs
-
-    def gerar_nuvem_de_palavras(data):
-        text = ' '.join([f"{row['palavra']} " * int(row['qtde']) for _, row in data.iterrows()])
-        wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-        return wordcloud
 
     with st.sidebar:
         st.title("Dashboard - Espumante")
@@ -58,12 +52,18 @@ def main():
         # Dados do site selecionado
         data = dfs[site_selecionado]
 
-        # Nuvem de palavras do site
-        st.write(f"Nuvem de Palavras do site: **{site_selecionado}**")
-        wordcloud = gerar_nuvem_de_palavras(dfs[site_selecionado])
+        # # Nuvem de palavras do site
+        word_freq = dict(zip(data['palavra'], data['qtde']))
+    
+        # Gerar a Word Cloud
+        wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(word_freq)
+        
+        # Plotar a Word Cloud
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
+        plt.title(f'Word Cloud para {site_selecionado}')
+        plt.show()
         st.pyplot(plt)
 
         st.write("")
